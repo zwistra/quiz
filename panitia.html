@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="data:,">
+<title>Panel Panitia — Rakit Komputer Arena</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="pan">
+<div class="orbs" aria-hidden="true"><i></i><i></i></div>
+<main class="wrap wide">
+  <h1><span class="grad">Panel Panitia</span></h1>
+  <p class="muted">Catat hasil peserta dari layar mereka (atau dari hasil yang mereka salin), satu kelompok per baris, lalu proses peringkat. Semua diproses di perangkat ini; tidak ada data dikirim ke mana pun.</p>
+  <div class="card pn">
+    <label class="fld">Hasil kelompok <small class="muted">format: Nama Kelompok; skor; benar; waktu — contoh: Kelompok 1; 3250; 22/28; 180</small>
+      <textarea id="pCodes" rows="8" spellcheck="false" placeholder="Kelompok 1; 3250; 22/28; 180&#10;Kelompok 2; 3900; 25/28; 210"></textarea></label>
+    <div class="row"><button class="btn" id="bRank" type="button">Proses Peringkat</button><button class="btn alt" id="bClr" type="button">Bersihkan</button></div>
+    <p class="err" id="pErr" role="alert"></p>
+  </div>
+  <div id="pOut" hidden>
+    <div class="podium" id="podium"></div>
+    <div class="tw"><table><thead><tr><th>#</th><th>Kelompok</th><th>Skor</th><th>Benar</th><th>Akurasi</th><th>Waktu (dtk)</th><th>Catatan</th></tr></thead><tbody id="pBody"></tbody></table></div>
+    <div class="row"><button class="btn" id="bCsv" type="button">⬇️ Unduh CSV</button><button class="btn alt" id="bTsv" type="button">📋 Salin Tabel</button></div>
+    <div id="pInv" class="card inv" hidden><b>Baris ditolak</b><ul id="pInvL"></ul></div>
+  </div>
+  <p class="small muted">Catatan: hasil yang diketik/ditempel tidak memiliki tanda keamanan, jadi cocokkan dengan layar peserta saat lomba berlangsung dan awasi langsung. Pastikan sekolah menyetujui pengumuman hasil lomba dan dokumentasinya.</p>
+</main>
+<script src="assets/js/engine.js"></script>
+<script src="assets/js/panitia.js"></script>
+</body>
+</html>
